@@ -4,14 +4,13 @@ import {AppComponent} from './app.component';
 import {AlbumListComponent} from './album-list/album-list.component';
 import {AlbumCreateComponent} from './album-create/album-create.component';
 import {PhotoCreateComponent} from './photo-create/photo-create.component';
-
+import {HttpClientModule} from '@angular/common/http';
 import {Routes, RouterModule} from '@angular/router';
+import {FormsModule} from '@angular/forms';
 
 const routes: Routes = [
-  {
-    path: 'albums',
-    component: AlbumListComponent
-  }
+  {path: 'albums', component: AlbumListComponent},
+  {path: 'albums/create', component: AlbumCreateComponent},
 ];
 
 @NgModule({
@@ -23,7 +22,9 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

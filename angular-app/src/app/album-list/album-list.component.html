@@ -1,3 +1,11 @@
-<p>
-  album-list works!
-</p>
+<div class="row">
+  <div class="col-md-12"><h1>Meus Albums</h1></div>
+  <div class="col-md-12">
+    <button class="btn btn-primary" [routerLink]="['create']">Criar álbum</button>
+  </div>
+  <br><br>
+  <div class="card col-md-3" *ngFor="let album of albums">
+    <div class="card-body"><h3>{{album.name}}</h3></div>
+
+  </div>
+</div>
