@@ -18,6 +18,8 @@ class CorsMiddleware
         if ($request->is('api/*')) { // api/albums , api/list
             header('Access-Control-Allow-Origin: *');
             header('Access-Control-Allow-Methods: GET,POST');
+            header('Access-Control-Allow-Headers: Content-Type');
+
         }
         return $next($request);
     }
